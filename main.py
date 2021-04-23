@@ -9,17 +9,24 @@ import sys
 # Input - String that is an integer
 # Output - Prints to stdout if year is leap or not
 def isLeapYear(input):
+    valid = True
 
-    year = int(input)
+    # See if user entered an integer
+    try:
+        year = int(input)
+    except ValueError:
+        print("Please enter a valid integer")
+        valid = False
 
     # Check if leap year
-    if(year % 4 == 0):
-        if(year % 100 == 0 and year % 400 != 0):
-            print(year, "is not a leap year!")
+    if(valid):
+        if(year % 4 == 0):
+            if(year % 100 == 0 and year % 400 != 0 and valid):
+                print(year, "is not a leap year!")
+            else:
+                print(year, "is a leap year!")
         else:
-            print(year, "is a leap year!")
-    else:
-        print(year, "is not a leap year!")
+            print(year, "is not a leap year!")
 
 
 
