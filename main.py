@@ -24,7 +24,10 @@ def isLeapYear(input):
 
 
 
-# Driver code
-isLeapYear(sys.argv[1])
+# Driver code, checks arg counts
+if(len(sys.argv) == 2):
+    isLeapYear(sys.argv[1])
+else:
+    print("Usage: main.py [year]")
 
 
